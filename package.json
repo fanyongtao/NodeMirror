@@ -1,34 +1,33 @@
 {
-  "name": "facemirror",
+  "name": "Mirror",
   "version": "0.0.1",
-  "description": "face++ node.js sdk",
+  "description": "Faceplusplus Node.js SDk",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/_mocha --growl test/**/*.js"
   },
   "keywords": [
-    "face++",
-    "nodejs",
-    "sdk"
+    "Faceplusplus",
+    "Node.js",
+    "SDK"
   ],
   "bugs": {
-    "url": "https://github.com/Tate-ad/facemirror/issues",
+    "url": "https://github.com/fanyongtao/NodeMirror.git",
     "email": "tate_fan@163.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tate-ad/facemirror.git"
+    "url": "https://github.com/fanyongtao/NodeMirror.git"
   },
   "dependencies": {
     "merge-descriptors": "^1.0.1",
     "mime": "^1.3.4",
-    "request": "^2.72.0",
-    "should": "^8.3.1",
-    "superagent": "^1.8.3"
+    "q": "^1.4.1",
+    "should": "^8.3.1"
   },
   "devDependencies": {
     "mocha": "^2.5.3"
   },
-  "author": "tate_fan",
+  "author": "fyt",
   "license": "ISC"
 }
