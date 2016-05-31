@@ -11,10 +11,13 @@ var proto = require('./application');
 
 function AppFunc(){
   var app = function(){}
+
   /* 属性复制继承 */
   merge(app, EventEmitter.prototype, false);
   merge(app, proto, false);
+
   app.init();
+
   return app;
 }
 

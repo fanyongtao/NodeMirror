@@ -3,54 +3,25 @@ var should = require('should');
 var path = require('path');
 
 var config = require('./config/config.json');
-var fyt = require('../mirror');
+var app = require('../mirror')();
 var image_url = 'http://pic.mmfile.net/2013/08/131T954O-5.jpg';
 var country = 'china';
 var filepath = './liudehua.jpg';
 
 
-describe('#First test', function() {
+describe('## Test init', function(){
 
-  this.timeout(3000);
-
-  before(function() {
-    fyt.config({
-      api_key: config.api_key,
-      api_secret: config.api_secret,
-      country: country
-    });
+  before(function(){
+    app.config(config);
+    console.log(app);
   });
 
-  it('1.> Test obj property', function() {
-    assert.equal(fyt._ser_url, config.cn_url);
-    assert.equal(fyt._api_key, config.api_key);
-    assert.equal(fyt._api_secret, config.api_secret);
-  });
-
-  it('2>> Test a get request', function(done){
-    fyt.detection.detect(image_url, {
-    }, function(err, data){
-      if(err) {
-        console.log(err);
-      }
-      should(data).have.property('face');
-      should(data).have.property('url');
-      should(data).have.property('session_id');
-      (Array.isArray(data.face)).should.be.ok;
-      done();
-    });
-  });
-
-
-  it('3>> Test a post request', function(done){
-    fyt.detection.detect(path.join(__dirname, filepath), {
-      attribute: ['glass']
-    }, function(err, data){
-      if(err) {
-        console.log(err);
-      }
-      done();
-    });
+  it('1. >>', function(){
+    app.should.have.property('on');
+    app.should.have.property('emit');
+    app.should.have.property('settings');
+    app.should.have.property('use');
+    app.should.have.property('init');
+    app.should.have.property('_url_map');
   });
 });
-
