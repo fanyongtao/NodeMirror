@@ -17,6 +17,8 @@ app.init = function() {
 
 
 app.defaultSettingFunc = function defaultSettingFunc(){
+  var env = process.env.NODE_ENV || 'development';
+
   this.on('config', function(config){
     this._mount(config);
   });
